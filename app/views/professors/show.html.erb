@@ -4,6 +4,10 @@
   <strong>Name:</strong>
   <%= @professor.Name %>
 </p>
+<ol>
+  <% @professor.courses.each do |course| %>
+    <li> <%= course.name %>
+  <% end %>
 
 <%= link_to 'Edit', edit_professor_path(@professor) %> |
 <%= link_to 'Back', professors_path %>
