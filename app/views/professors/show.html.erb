@@ -6,7 +6,7 @@
 </p>
 <ol>
   <% @professor.courses.each do |course| %>
-    <li> <%= course.name %>
+    <li> <%= course.Name %>
   <% end %>
 
 <%= link_to 'Edit', edit_professor_path(@professor) %> |
