@@ -12,6 +12,11 @@ class ProfessorsController < ApplicationController
   def show
   end
 
+  def search
+  	@professor = Professor.where("name Like ?", "%#{params[:q]}%")
+  	render :index
+  end
+
   # GET /professors/new
   def new
     @professor = Professor.new
@@ -69,6 +74,6 @@ class ProfessorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def professor_params
-      params.require(:professor).permit(:Name)
+      params.require(:professor).permit(:Name, :q)
     end
 end
