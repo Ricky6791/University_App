@@ -13,7 +13,7 @@ class ProfessorsController < ApplicationController
   end
 
   def search
-  	@professor = Professor.where("name Like ?", "%#{params[:q]}%")
+  	@professors = Professor.all.where("name Like ?", "%#{params[:q]}%")
   	render :index
   end
 
